@@ -1,8 +1,9 @@
-var five = require("johnny-five"),board, led;
+const { Board, Led } = require("johnny-five");
+const board = new Board();
 
-board = new five.Board();
-
-board.on("ready", function() {
-  led = new five.Led(13);
-  led.strobe(1000); // on off every second
+board.on("ready", () => {
+  // Create an Led on pin 13
+  const led = new Led(13);
+  // Blink every half second
+  led.blink(500);
 });

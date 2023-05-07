@@ -16,7 +16,7 @@ Connect to `ws://localhost:3000`, and send:
 
 ```json
 {
-    "led":on
+    "led": "on"
 }
 ```
 

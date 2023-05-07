@@ -1,0 +1,15 @@
+{
+  "name": "websockets-arduino",
+  "version": "1.0.0",
+  "description": "experiments with arduino and websockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Filipe Freire",
+  "license": "MIT",
+  "dependencies": {
+    "johnny-five": "^2.1.0",
+    "socket.io": "^4.6.1"
+  }
+}

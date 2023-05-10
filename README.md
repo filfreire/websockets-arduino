@@ -35,3 +35,4 @@ Connect to `ws://localhost:3000`, and send:
 - [https://www.instructables.com/Javascript-robotics-and-browser-based-Arduino-cont/]
 - [https://www.makeuseof.com/tag/control-arduino-using-javascript/]
 - [https://github.com/rwaldron/johnny-five/blob/main/docs/proximity-hcsr04.md]
+- [https://www.geeksforgeeks.org/how-to-open-web-cam-in-javascript/]

@@ -1,0 +1,30 @@
+<html>
+<style>
+    #magical-square {
+        background-color: tomato;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+    }
+</style>
+
+<body>
+    test
+    <div id="magical-square">this square changes color when proximity sensor is triggered</div>
+</body>
+<script>
+    console.log('hello!')
+    const w = new WebSocket("ws://localhost:3000");
+    w.onopen = (event) => {
+        console.log('connection open!');
+        w.onmessage = (event) => {
+            console.log(event.data);
+            if (event.data === 'DISTANCE_THRESHOLD_REACHED') {
+                console.log('received DISTANCE_THRESHOLD_REACHED');
+                document.getElementById('magical-square').style.backgroundColor = "darkgreen";
+            }
+        };
+    };
+</script>
+
+</html>

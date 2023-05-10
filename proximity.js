@@ -27,7 +27,7 @@ wss.on('connection', function connection(ws) {
 
         if (centimeters <= DISTANCE_THRESHOLD && !distanceThresholdReached) {
             console.log('DISTANCE_THRESHOLD_REACHED');
-            ws.send(JSON.stringify({ 'event': 'DISTANCE_THRESHOLD_REACHED' }));
+            ws.send('DISTANCE_THRESHOLD_REACHED');
             distanceThresholdReached = true;
             led.on();
         }
@@ -41,4 +41,9 @@ wss.on('connection', function connection(ws) {
         }
 
     });
+
+    ws.on('close', function close() {
+        console.log('disconnected');
+    });
+
 });

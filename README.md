@@ -46,5 +46,7 @@ Connect to `ws://localhost:3000`, and send:
 - [https://www.makeuseof.com/tag/control-arduino-using-javascript/]
 - [https://github.com/rwaldron/johnny-five/blob/main/docs/proximity-hcsr04.md]
 - [https://www.geeksforgeeks.org/how-to-open-web-cam-in-javascript/]
+- [https://www.tutorialspoint.com/arduino/arduino_dc_motor.htm]
+- [https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/message_event]
 - [https://github.com/rwaldron/johnny-five/blob/main/docs/sensor.md]
 - [https://github.com/tomayac/joy-con-webhid]

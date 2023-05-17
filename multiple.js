@@ -1,10 +1,12 @@
-const { Board, Proximity, Led } = require("johnny-five");
+const { Board, Proximity, Led, Sensor } = require("johnny-five");
 const { WebSocket, WebSocketServer } = require("ws");
 const board = new Board();
 let led;
 
 let distanceThresholdReached = false;
 const DISTANCE_THRESHOLD = 50;
+const DURATION = 5000; // 3 secs
+
 
 const DEBUG = false;
 
@@ -46,7 +48,10 @@ function sendSoundTriggerEvent(client, value) {
 board.on("ready", () => {
 
     // motor trigger pin 3
-    motor = new Led(3).off();
+    motor1 = new Led(3).off();
+    motor2 = new Led(4).off();
+
+    led = new Led(13).off();
 
     // sensor pin 8
     let sensor = new Sensor.Digital(8);
@@ -82,10 +87,17 @@ board.on("ready", () => {
                     if (d === 'TRIGGER_PIN') {
                         console.log('received TRIGGER_PIN');
                         ws.send('motor:on');
-                        motor.on();
+                        motor1.on();
+                        motor2.on();
+
+                        board.wait(50, function () {motor1.off()});
+                        board.wait(50, function () {motor1.on()});
+                        board.wait(50, function () {motor1.off()});
+                        board.wait(50, function () {motor1.on()});
                         board.wait(DURATION, function () {
                             ws.send('motor:off');
-                            motor.off();
+                            motor1.off();
+                            motor2.off();
                         });
                     } else {
                         console.log('received unknown message', d)

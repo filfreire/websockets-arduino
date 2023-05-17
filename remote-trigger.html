@@ -1,0 +1,33 @@
+<html>
+<style>
+    #magical-button {
+        background-color: tomato;
+        color: beige;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <button id='magical-button'>Trigger Pin in arduino</button>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log('hello!')
+        const w = new WebSocket("ws://localhost:3000");
+
+        const button = document.getElementById('magical-button')
+
+        button.addEventListener('click', function (e) { console.log(e); w.send('TRIGGER_PIN') });
+
+        w.onopen = (event) => {
+            console.log('connection open!');
+        }
+        w.onmessage = (event) => {
+            console.log(event.data);
+        }
+    });
+</script>
+
+</html>

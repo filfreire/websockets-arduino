@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "experiments with arduino and websockets",
   "main": "index.js",
+  "type": "module",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "johnny-five": "^2.1.0",
+    "joy-con-webhid": "^0.4.0",
     "serialport": "^11.0.0",
     "ws": "^8.13.0"
   }

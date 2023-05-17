@@ -2,7 +2,17 @@
 
 Experiments using arduino and websockets
 
-## Run
+## List of experiments
+
+- Lighting a LED via websocket event
+- Reading proximity values from HCSR-04 sensor and triggering a server-sent websocket event
+- Remotely triggering a pin from a websocket event done by the client
+- Read KY-038 sound values using Sensor.Digital
+- (non-arduino related) - connecting to a [Joy-Con controller](https://en.wikipedia.org/wiki/Joy-Con) and triggering the rumble
+
+## Running an experiment
+
+Example running `ledtest.js`
 
 ```shell
 npm i
@@ -36,3 +46,5 @@ Connect to `ws://localhost:3000`, and send:
 - [https://www.makeuseof.com/tag/control-arduino-using-javascript/]
 - [https://github.com/rwaldron/johnny-five/blob/main/docs/proximity-hcsr04.md]
 - [https://www.geeksforgeeks.org/how-to-open-web-cam-in-javascript/]
+- [https://github.com/rwaldron/johnny-five/blob/main/docs/sensor.md]
+- [https://github.com/tomayac/joy-con-webhid]
